@@ -42,5 +42,5 @@ jobs:
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
           draft: true
-          title: "Talks+ ${{ github.ref_name }}"
+          title: "Talks+ ${{ github.ref_name }} (Node ${{ matrix.node-version }})"
           files: "talks-plus_${{ github.ref_name }}.zip"
