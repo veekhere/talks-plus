@@ -1,0 +1,45 @@
+name: "Build Latest (when new tag created)"
+
+on:
+  push:
+    tags:
+      - "*"
+
+env:
+  TALKS-PLUS_VERSION: ${{ github.ref_name }}
+
+permissions:
+  contents: "write"
+  packages: "write"
+  pull-requests: "read"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [16.x, 18.x, 20.x, 22.x]
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: "npm"
+      - run: |
+          npm install
+          npm run build --if-present
+          npm run test --if-present
+
+      - name: Zip build
+        run: zip "talks-plus_${{ github.ref_name }}.zip" dist
+
+      - name: Generate prerelease
+        uses: "marvinpinto/action-automatic-releases@latest"
+        with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          draft: true
+          title: "Talks+ ${{ github.ref_name }}"
+          files: "talks-plus_${{ github.ref_name }}.zip"
