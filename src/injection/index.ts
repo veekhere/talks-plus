@@ -1,14 +1,11 @@
-import { registerCollapseButton, registerResizer } from './elements.part';
-import { syncSettings } from './events.part';
-import { initStyles } from './styles.part';
+import { PaneUpdateObserver } from '@observers/pane-update.observer';
+import { initStyles } from '@parts/styles.part';
 
 setTimeout(() => {
   initStyles();
 
-  registerResizer();
-  registerCollapseButton();
-
-  syncSettings();
+  const paneUpdateObserver = new PaneUpdateObserver();
+  paneUpdateObserver.connect();
 },
   100
 );

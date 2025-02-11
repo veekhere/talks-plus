@@ -1,5 +1,11 @@
 {
   "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {
+      "@parts/*": ["src/injection/parts/*"],
+      "@core/*": ["src/injection/core/*"],
+      "@observers/*": ["src/injection/observers/*"]
+    },
     "strict": true,
     "target": "es6",
     "moduleResolution": "bundler",

@@ -7,5 +7,11 @@
       "url": "http://json.schemastore.org/chrome-manifest"
     }
   ],
-  "cSpell.words": ["resizer"]
+  "cSpell.words": ["Disconectable", "resizer"],
+  "files.exclude": {
+    "**/.git": false,
+    "**/.svn": false,
+    "**/.hg": false,
+    "**/CVS": false
+  }
 }

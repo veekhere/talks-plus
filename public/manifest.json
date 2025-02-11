@@ -3,7 +3,7 @@
 
   "name": "Talks+",
   "description": "«Таблетка» для корпоративного мессенджера Talks",
-  "version": "1.0",
+  "version": "1.0.0",
   "author": "@veekhere",
 
   "icons": {
@@ -15,7 +15,7 @@
 
   "content_scripts": [
     {
-      "matches": ["https://talks.croc.ru/*"],
+      "matches": ["https://talk.croc.ru/*", "https://talks.croc.ru/*"],
       "js": ["js/content_script.js"]
     }
   ],
@@ -26,5 +26,5 @@
 
   "permissions": ["scripting", "storage", "tabs"],
 
-  "host_permissions": ["https://talks.croc.ru/*"]
+  "host_permissions": ["https://talk.croc.ru/*", "https://talks.croc.ru/*"]
 }
