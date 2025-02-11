@@ -35,7 +35,7 @@ jobs:
           npm run test --if-present
 
       - name: Zip build
-        run: zip "talks-plus_${{ github.ref_name }}.zip" dist
+        run: zip -r "talks-plus_${{ github.ref_name }}.zip" dist
 
       - name: Generate prerelease
         uses: "marvinpinto/action-automatic-releases@latest"
