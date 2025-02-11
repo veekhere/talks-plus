@@ -1,0 +1,33 @@
+{
+  "name": "talks-plus",
+  "version": "1.0.0",
+  "description": "«Таблетка» для корпоративного мессенджера Talks",
+  "main": "index.js",
+  "scripts": {
+    "watch": "webpack --config webpack/webpack.dev.js --watch",
+    "build": "webpack --config webpack/webpack.prod.js",
+    "clean": "rimraf dist",
+    "style": "prettier --write \"src/**/*.{ts}\""
+  },
+  "author": "@veekhere",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/veekhere/talks-plus"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.26.8",
+    "@babel/preset-env": "^7.26.8",
+    "@babel/preset-typescript": "^7.26.0",
+    "@types/chrome": "0.0.158",
+    "babel-loader": "^9.2.1",
+    "copy-webpack-plugin": "^9.0.1",
+    "glob": "^7.1.6",
+    "prettier": "^2.2.1",
+    "rimraf": "^3.0.2 ",
+    "typescript": "^5.0.4",
+    "webpack": "^5.97.1",
+    "webpack-cli": "^4.0.0",
+    "webpack-merge": "^5.0.0"
+  }
+}
