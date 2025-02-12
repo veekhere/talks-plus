@@ -1,6 +1,6 @@
 {
   "name": "talks-plus",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "«Таблетка» для корпоративного мессенджера Talks",
   "main": "index.js",
   "scripts": {
