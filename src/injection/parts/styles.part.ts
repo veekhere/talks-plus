@@ -1,7 +1,6 @@
 export const classes = {
   pane: 'layout-pane',
   paneCenter: 'layout-pane__center',
-  paneHeader: 'layout-pane__header',
   resizer: 'resizer',
   resizerLine: 'resizer__line',
   sidebar: 'layout-pane__left',
@@ -59,10 +58,6 @@ export function initStyles(): void {
 
     .${classes.paneCenter} {
       max-width: 100% !important;
-
-      .${classes.paneHeader} {
-        padding-left: 48px;
-      }
     }
 
     div#search-input--chips::after {
